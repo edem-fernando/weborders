@@ -280,21 +280,21 @@
         
         fillMenu();
         
-//        document.querySelector('#zip_code').addEventListener('change', (e) => {
-//            var zipcode = e.target.value.replace(/\D/g, '');
-//            var url_zipcode = 'https://viacep.com.br/ws/' + zipcode + '/json/';
-//            if (zipcode.length != 8) {
-//                return;
-//            }
-//            
-//            requestJq('GET', url_zipcode, {}, (response) => {
-//                if (response.cep) {
-//                    document.querySelector('#city').value = response.localidade;
-//                    document.querySelector('#district').value = response.bairro;
-//                    document.querySelector('#street').value = response.logradouro;
-//                }
-//            });
-//        });
+        document.querySelector('#zip_code').addEventListener('change', (e) => {
+            var zipcode = e.target.value.replace(/\D/g, '');
+            var url_zipcode = 'https://viacep.com.br/ws/' + zipcode + '/json/';
+            if (zipcode.length != 8) {
+                return;
+            }
+            
+            requestJq('GET', url_zipcode, {}, (response) => {
+                if (response.cep) {
+                    document.querySelector('#city').value = response.localidade;
+                    document.querySelector('#district').value = response.bairro;
+                    document.querySelector('#street').value = response.logradouro;
+                }
+            });
+        });
         
         btn_finalize_order.addEventListener('click', () => finalizeOrder());        
     </script>
